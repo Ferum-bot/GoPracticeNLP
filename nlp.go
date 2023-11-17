@@ -1,3 +1,6 @@
+/*
+Package nlp provides natural language processing utilities
+*/
 package nlp
 
 import (
@@ -9,6 +12,7 @@ var (
 	wordRe = regexp.MustCompile(`[a-zA-Z]+`)
 )
 
+// Tokenize returns list of (lower case) tokens found in text
 func Tokenize(text string) []string {
 	words := wordRe.FindAllString(text, -1)
 	var tokens []string
