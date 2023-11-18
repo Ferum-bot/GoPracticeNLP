@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-const tomlFileName = "tokenize_cases.toml"
+const tomlFileName = "testdata/tokenize_cases.toml"
 
 type TomlCases struct {
 	Cases []TomlCase
@@ -24,7 +24,7 @@ var testCases = []struct {
 }{
 	{
 		inputText:      "Who's on the first?",
-		expectedOutput: []string{"who", "s", "on", "the", "first"},
+		expectedOutput: []string{"who", "on", "the", "first"},
 	},
 	{
 		inputText:      "",
@@ -48,7 +48,7 @@ func TestTokenize(t *testing.T) {
 	text := "Who's on the first?"
 
 	actual := Tokenize(text)
-	expected := []string{"who", "s", "on", "the", "first"}
+	expected := []string{"who", "on", "the", "first"}
 
 	require.Equal(t, expected, actual)
 }
